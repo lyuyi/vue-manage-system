@@ -36,12 +36,12 @@
             },
             // 关闭单个标签
             closeTags(index) {
-                const delItem = this.tagsList.splice(index, 1)[0];
+                const delItem = this.tagsList.splice(index, 1)[0];//当前关闭的标签是否是被选中的标签
                 const item = this.tagsList[index] ? this.tagsList[index] : this.tagsList[index - 1];
                 if (item) {
-                    delItem.path === this.$route.fullPath && this.$router.push(item.path);
+                    delItem.path === this.$route.fullPath && this.$router.push(item.path);//如果数组不为空则让选中的标签为紧邻关闭标签的那一个
                 }else{
-                    this.$router.push('/');
+                    this.$router.push('/');//如果为空则页面跳转到/
                 }
             },
             // 关闭全部标签
@@ -52,14 +52,14 @@
             // 关闭其他标签
             closeOther(){
                 const curItem = this.tagsList.filter(item => {
-                    return item.path === this.$route.fullPath;
+                    return item.path === this.$route.fullPath;//当前地址栏路径是否与渲染的路径相同 样式匹配
                 })
                 this.tagsList = curItem;
             },
             // 设置标签
             setTags(route){
                 const isExist = this.tagsList.some(item => {
-                    return item.path === route.fullPath;
+                    return item.path === route.fullPath;//打开标签后，判断数组中是否已经存在该路由
                 })
                 if(!isExist){
                     if(this.tagsList.length >= 8){
@@ -70,8 +70,8 @@
                         path: route.fullPath,
                         name: route.matched[1].components.default.name
                     })
-                }
-                bus.$emit('tags', this.tagsList);
+                }//数组中路由存在不push ,单击左侧路由变化,点击标签路由变化均触发
+                bus.$emit('tags', this.tagsList);//在 Header 组件中点击按钮时触发 tags 事件：
             },
             handleTags(command){
                 command === 'other' ? this.closeOther() : this.closeAll();
@@ -84,7 +84,7 @@
         },
         watch:{
             $route(newValue, oldValue){
-                this.setTags(newValue);
+                this.setTags(newValue);//第一次点击时将路由信息push到tagsList中 后来的每次点击都是通过watch $route执行添加标签方法 
             }
         },
         created(){

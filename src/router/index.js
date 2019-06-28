@@ -20,9 +20,24 @@ export default new Router({
                     meta: { title: '系统首页' }
                 },
                 {
-                    path: '/icon',
-                    component: resolve => require(['../components/page/Icon.vue'], resolve),
-                    meta: { title: '自定义图标' }
+                    path: '/internateCargo',
+                    component: resolve => require(['../components/page/InternateCargo.vue'], resolve),
+                    meta: { title: '国际散航发货运价' }
+                },
+                {
+                    path: '/contact',
+                    component: resolve => require(['../components/page/contact.vue'], resolve),
+                    meta: { title: '发提货合同' },
+                },
+                {
+                    path:'/newContact',
+                    meta: { title: '新增发提货合同' },
+                    component: resolve => require(['../components/page/newContact.vue'], resolve)
+                  },
+                {
+                    path: '/pigOneDragon',
+                    component: resolve => require(['../components/page/pigOneDragon.vue'], resolve),
+                    meta: { title: 'pigOneDragon' }
                 },
                 {
                     path: '/table',

@@ -84,8 +84,18 @@
                     },
                     {
                         icon: 'el-icon-lx-emoji',
-                        index: 'icon',
-                        title: '自定义图标'
+                        index: 'internateCargo',
+                        title: '国际散航发货运价'
+                    },
+                    {
+                        icon: 'el-icon-lx-emoji',
+                        index: 'contact',
+                        title: '发提货合同'
+                    },
+                    {
+                        icon: 'el-icon-lx-emoji',
+                        index: 'pigOneDragon',
+                        title: 'pigOneDragon'
                     },
                     {
                         icon: 'el-icon-lx-favor',
@@ -131,7 +141,7 @@
             }
         },
         created(){
-            // 通过 Event Bus 进行组件间通信，来折叠侧边栏
+            // 在 Sidebar 组件中监听 collapse 事件：来折叠侧边栏
             bus.$on('collapse', msg => {
                 this.collapse = msg;
             })

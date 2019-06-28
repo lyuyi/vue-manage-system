@@ -71,7 +71,7 @@
             // 侧边栏折叠
             collapseChage(){
                 this.collapse = !this.collapse;
-                bus.$emit('collapse', this.collapse);
+                bus.$emit('collapse', this.collapse);// 在 Header 组件中点击按钮时触发 collapse 事件
             },
             // 全屏事件
             handleFullScreen(){

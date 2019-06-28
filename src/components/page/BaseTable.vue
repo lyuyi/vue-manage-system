@@ -96,6 +96,7 @@
         computed: {
             data() {
                 return this.tableData.filter((d) => {
+                    debugger
                     let is_del = false;
                     for (let i = 0; i < this.del_list.length; i++) {
                         if (d.name === this.del_list[i].name) {

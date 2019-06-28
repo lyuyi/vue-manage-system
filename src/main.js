@@ -8,6 +8,9 @@ import 'element-ui/lib/theme-chalk/index.css';    // 默认主题
 import '../static/css/icon.css';
 import './components/common/directives';
 import "babel-polyfill";
+import $ from 'jquery'
+
+require('./mock.js')
 
 Vue.use(ElementUI, { size: 'small' });
 Vue.prototype.$axios = axios;
