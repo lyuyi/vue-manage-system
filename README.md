@@ -1,5 +1,5 @@
 # vue-manage-system #
-基于Vue.js 2.x系列 + Element UI 的后台管理系统解决方案。[线上地址](http://blog.gdfengshuo.com/example/work/)
+基于Vue + Element UI 的后台管理系统。
 
 ## 安装步骤 ##
 
